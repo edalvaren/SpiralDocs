@@ -1,0 +1,25 @@
+nav {
+  height: 40px;
+  width: 100%;
+}
+nav li {
+  height: 38px;
+  width: 100px;
+}
+nav li a {
+  color: #000;
+}
+nav li a:link {
+  text-decoration: none;
+}
+nav li a:visited {
+  color: #CC3333;
+  text-decoration: none;
+}
+nav li a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+nav li a:active {
+  text-decoration: underline;
+}
