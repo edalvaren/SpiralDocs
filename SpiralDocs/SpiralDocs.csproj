@@ -16,9 +16,4 @@
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Sevices\" />
-  </ItemGroup>
-
 </Project>
