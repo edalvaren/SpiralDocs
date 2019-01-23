@@ -6,14 +6,32 @@
     <UserSecretsId>ee4fec8e-fa4a-4382-8a58-a297c7e4af55</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Styles\site.less" />
+  </ItemGroup>
+
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Azure.Search" Version="5.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Views\Search\" />
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="wwwroot\favicon.ico">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
