@@ -8,6 +8,8 @@ namespace SpiralDocs.Models
     {
         public ObjectId Id { get; set; }
 
+        public string UserId { get; set; }
+
         [BsonElement("FirstName")]
         public string FirstName { get; set; }
 

@@ -2,32 +2,40 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Spiral Web App</h1>
-    <p>STG Document Site</p>
-</div>
 
-<div class="container">
-    <img class="image" src='~/images/dds-lg.jpg' alt="background" />
-</div>
-<br /> 
-<div class="level">
-    <div class="level-left">
-        <div class="level-item">
-            <p class="subtitle is-5">
-                <strong>398</strong> Documents in Database
-            </p>
+
+<div class="container wrapper">
+    <h1 class="title is-2 is-primary"> STG Document Site</h1>
+    <center>
+        <img class="image main-image" src='~/images/dds-lg.jpg' alt="background" />
+        <div class="middle">
+            <div class="is-text"> Click to start...</div>
         </div>
-        <div class="level-item">
-            <div class="field has-addons">
-                <p class="control">
-                    <input class="input" type="text" placeholder="Find a Document">
+        <br />
+    </center>
+
+    <div class="level">
+        <div class="level-left">
+            <div class="level-item">
+                <p class="subtitle is-5">
+                    <strong>398</strong> Documents in Database
                 </p>
-                <p class="control">
-                    <button class="button">
-                        Search
-                    </button>
-                </p>
+            </div>
+            <div class="level-item">
+                <div class="field has-addons">
+                    <form method="post">
+
+                        <p class="control">
+                            <input class="input" id="searchQuery" type="text" placeholder="Find a Document">
+                        </p>
+                        <p class="control">
+                          <a class="Button" href="@Url.Action("Index", "Search", new { searchQuery = "Surging"})" > Search </a>
+                            Something Here 
+
+                        </p>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
 
-namespace SpiralDocs.Sevices
+namespace SpiralDocs.Services
 {
     /// <summary>
     /// Service class implementing Azure Search functionality to query Azure Blob Storage for Files

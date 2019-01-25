@@ -28,4 +28,43 @@
             }
         }
     }
+ }
+
+.wrapper {
+    margin-top: 15px;
+    padding: 10px 5px 5px 10px;
+
+    .main-image {
+        align-self: stretch;
+        opacity: 1;
+        display: block;
+        width: auto;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+
+    &:hover {
+        .main-image {
+            opacity: 0.3; 
+        }
+        
+        .middle{
+            opacity: 1;
+        }
+    }
 }
+
+    

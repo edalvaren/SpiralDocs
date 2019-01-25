@@ -1,17 +1,18 @@
-﻿using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using SpiralDocs.Sevices;
 using SpiralDocs.Models;
-using Microsoft.AspNetCore.Http; 
+using SpiralDocs.Services;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Microsoft.Azure.Search.Models; 
+using System.Threading.Tasks;
 
 namespace SpiralDocs.Controllers
 {
-    [Route("api/Search")]
-    [ApiController]
+    //[Route("api/Search")]
+    //[ApiController]
     public class SearchController : Controller
     {
 
@@ -29,7 +30,7 @@ namespace SpiralDocs.Controllers
 
         }
 
-    
+
         /// <summary>
         /// Route at "api/Search/<searchquery>/" 
         /// Uses search service to return query results as application.json
@@ -37,25 +38,25 @@ namespace SpiralDocs.Controllers
         /// <param name="searchQuery">string query</param>
         /// <returns></returns>
         [HttpGet("{searchQuery}", Name = "SearchbyQuery")]
-        public JsonResult Search(string searchQuery)
+        public ActionResult Search(string searchQuery)
         {
             if (string.IsNullOrWhiteSpace(searchQuery))
                 searchQuery = "*";
-
-            var data = _docsSearch.Search(searchQuery);
-            var jsonData = Json(data);
-            var data0 = new SearchResultObject();
-
-            return Json(data);
+            var resObj = new Microsoft.Azure.Search.Models.DocumentSearchResult(); 
+            resObj = _docsSearch.Search(searchQuery);
+            var jsonData = Json(resObj);
+            return View("Index", resObj);  
         }
 
+
+            
         /// <summary>
         /// HTTP Post Method returning an Action Result (Ok Status Code) 
         /// Async Method
         /// </summary>
         /// <param name="files">IForm File to be uploaded</param>
         /// <returns></returns>
-        [HttpPost]
+        //[HttpPost]
         public async Task<IActionResult> UploadFileAsync(List<IFormFile> files)
         {
             long size = files.Sum(f => f.Length);
@@ -74,4 +75,5 @@ namespace SpiralDocs.Controllers
 
         }
     }
+
 }

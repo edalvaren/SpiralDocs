@@ -3,18 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SpiralDocs.Sevices; 
+using SpiralDocs.Services;
+using SpiralDocs.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations; 
 
 namespace SpiralDocs.Controllers
 {
     public class DocumentsController : Controller
     {
-        private readonly SpiralDocService _docService; 
-        public IActionResult Index()
+        private readonly SpiralDocService _docService;
+        
+        public DocumentsController(SpiralDocService DocService)
         {
-            ViewData["Title"] = "Index";
-
-            return View();
+            _docService = DocService; 
         }
+
+        [Authorize]
+        public ActionResult<List<SpiralDoc>> Index()
+        {
+            return View(_docService.Get().ToList());
+        }
+
+        public IActionResult Browse()
+        {
+            return View("DocuBrowse"); 
+        }
+
+
+        //public IActionResult Index()
+        //{
+        //    ViewData["Title"] = "Index";
+
+        //    return View();
+        //}
     }
 }

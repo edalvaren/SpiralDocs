@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <UserSecretsId>ee4fec8e-fa4a-4382-8a58-a297c7e4af55</UserSecretsId>
+    <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +24,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Views\Search\" />
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

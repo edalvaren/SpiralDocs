@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace SpiralDocs.Sevices
+namespace SpiralDocs.Services
 {
     public class SpiralDocService
     {
