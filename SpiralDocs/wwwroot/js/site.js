@@ -4,4 +4,4 @@
 // Write your JavaScript code.
 $.ajax({
 
-})
+});

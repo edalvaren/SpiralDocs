@@ -11,6 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SpiralDocs.Controllers
 {
+    [Microsoft.AspNetCore.Authorization.Authorize]
     public class DocumentsController : Controller
     {
         private readonly SpiralDocService _docService;
@@ -20,7 +21,6 @@ namespace SpiralDocs.Controllers
             _docService = DocService; 
         }
 
-        [Authorize]
         public ActionResult<List<SpiralDoc>> Index()
         {
             return View(_docService.Get().ToList());

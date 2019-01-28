@@ -8,6 +8,7 @@ using SpiralDocs.Models;
 
 namespace SpiralDocs.Controllers
 {
+    [Microsoft.AspNetCore.Authorization.Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()

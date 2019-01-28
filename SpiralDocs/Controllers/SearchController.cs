@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SpiralDocs.Controllers
 {
+[Microsoft.AspNetCore.Authorization.Authorize]
     //[Route("api/Search")]
     //[ApiController]
     public class SearchController : Controller
